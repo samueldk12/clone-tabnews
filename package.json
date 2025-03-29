@@ -1,0 +1,16 @@
+{
+  "name": "clone-tabnews",
+  "version": "1.0.0",
+  "description": "Implementação do tabnews para o curso.ddev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Samuel Arao",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^15.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
