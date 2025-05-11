@@ -26,11 +26,14 @@ export default async function status(req, res) {
     )
 
     await dbClient.end()
-    
+  
     if (migratedMigrations.length > 0){
       return res.status(201).json(migratedMigrations)
     }
     return res.status(200).json(migratedMigrations);
+  }else{
+    await dbClient.end()
+    return res.status(405).json({"METHOD NOT ALLOWED"})
   }
 
   return res.status(405).end()
