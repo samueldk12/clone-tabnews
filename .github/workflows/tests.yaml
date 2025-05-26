@@ -14,5 +14,4 @@ jobs:
           node-version: "lts/hydrogen"
 
       - run: npm ci
-
       - run: npm test

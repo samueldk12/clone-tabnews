@@ -8,7 +8,7 @@ beforeAll(async ()=>{
 
 
 test("GET to /api/v1/migrations should return 200", async () => {
-  
+
   const response1 = await fetch("http://localhost:3000/api/v1/migrations",{
     method: 'POST'
   });
@@ -23,7 +23,7 @@ test("GET to /api/v1/migrations should return 200", async () => {
       AND    table_name   = 'pgmigrations'\
     );")
   const exist_table = result_exist_table_query.rows[0].exists
-  
+
   expect(exist_table).toBe(true)
   expect(Array.isArray(response1Body)).toBe(true);
   expect(response1Body.length).toBeGreaterThan(0);
