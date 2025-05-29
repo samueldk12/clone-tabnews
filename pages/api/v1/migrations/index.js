@@ -38,7 +38,7 @@ export default async function status(request, response) {
       }
       return response.status(200).json(migratedMigrations);
     }
-  } catch (error){
+  } catch (error) {
     console.error(error);
     throw error;
   } finally {
