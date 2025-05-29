@@ -14,5 +14,5 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint:eslint:check"
+      - run: npm run lint:eslint:check
       - run: npm run lint:prettier:check
