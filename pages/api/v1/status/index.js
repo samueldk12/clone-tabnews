@@ -1,8 +1,6 @@
 import database from "infra/database.js";
-import { version } from "react";
 
 async function status(req, res) {
-  let variavelEsquecida;
   const updatedAt = new Date().toISOString();
   const postgresServerVersion = await database.query("SHOW server_version");
   const databaseVersion = postgresServerVersion.rows[0].server_version;
