@@ -8,6 +8,7 @@ async function getDefaultMigrationsOptions(dbClient, dryRun) {
     dryRun: dryRun,
     dir: resolve("infra", "migrations"),
     direction: "up",
+    log: () => {},
     migrationsTable: "pgmigrations",
   };
 }
