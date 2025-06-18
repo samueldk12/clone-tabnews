@@ -1,5 +1,4 @@
 import { version as uuidVersion } from "uuid";
-import database from "infra/database.js";
 import orchestrator from "tests/orchastrator.js";
 
 beforeAll(async () => {
