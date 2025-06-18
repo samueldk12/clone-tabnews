@@ -9,28 +9,28 @@ exports.up = (pgm) => {
     username: {
       type: "varchar(30)",
       notNull: true,
-      unique: true
+      unique: true,
     },
     // The max length of  a email is 254
-    email:{
+    email: {
       type: "varchar(254)",
       notNull: true,
-      unique: true
+      unique: true,
     },
     // The max length of a dbcrypt use to password is 72
-    password:{
+    password: {
       type: "varchar(72)",
       notNull: true,
     },
-    created_at:{
+    created_at: {
       type: "timestamptz",
       default: pgm.func("now()"),
     },
-    updated_at:{
+    updated_at: {
       type: "timestamptz",
       default: pgm.func("now()"),
     },
-  })
+  });
 };
 
 exports.down = false;
