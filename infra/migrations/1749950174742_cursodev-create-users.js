@@ -17,18 +17,20 @@ exports.up = (pgm) => {
       notNull: true,
       unique: true,
     },
-    // The max length of a dbcrypt use to password is 72
+    // The max length of a dbcrypt use to password is 72, and always generate 60 characters
     password: {
-      type: "varchar(72)",
+      type: "varchar(60)",
       notNull: true,
     },
     created_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      notNull: true,
+      default: pgm.func("timezone('utc',now())"),
     },
     updated_at: {
       type: "timestamptz",
-      default: pgm.func("now()"),
+      notNull: true,
+      default: pgm.func("timezone('utc',now())"),
     },
   });
 };
