@@ -2,12 +2,17 @@ import {
   InternalServerError,
   MethodNotAllowedError,
   ValidationError,
+  NotFoundError,
 } from "infra/errors";
 
 function onErrorHandler(error, _, response) {
   console.log(error);
 
   if (error instanceof ValidationError) {
+    return response.status(error.statusCode).json(error);
+  }
+
+  if (error instanceof NotFoundError) {
     return response.status(error.statusCode).json(error);
   }
 
