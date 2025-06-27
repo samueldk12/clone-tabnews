@@ -43,6 +43,7 @@
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "19.2.2",
     "@eslint/js": "9.27.0",
+    "@faker-js/faker": "^9.8.0",
     "commitizen": "4.3.1",
     "concurrently": "8.2.2",
     "cz-conventional-changelog": "3.3.0",
