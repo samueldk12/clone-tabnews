@@ -3,6 +3,7 @@ import {
   MethodNotAllowedError,
   ValidationError,
   NotFoundError,
+  UnauthorizedError,
 } from "infra/errors";
 
 function onErrorHandler(error, _, response) {
@@ -13,6 +14,10 @@ function onErrorHandler(error, _, response) {
   }
 
   if (error instanceof NotFoundError) {
+    return response.status(error.statusCode).json(error);
+  }
+
+  if (error instanceof UnauthorizedError) {
     return response.status(error.statusCode).json(error);
   }
 
