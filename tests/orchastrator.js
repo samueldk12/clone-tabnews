@@ -32,11 +32,13 @@ async function runPedingMigrations() {
 }
 
 async function createUser(userObject) {
+  const safeUser = userObject || {};
+
   const newUser = await user.create({
     username:
-      userObject.username || faker.internet.username().replace(/[_.-]/g, ""),
-    email: userObject.email || faker.internet.email(),
-    password: userObject.password || "validPassowrd",
+      safeUser.username || faker.internet.username().replace(/[_.-]/g, ""),
+    email: safeUser.email || faker.internet.email(),
+    password: safeUser.password || "validPasswordrd",
   });
 
   return newUser;
